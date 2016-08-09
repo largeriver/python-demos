@@ -3,7 +3,7 @@
 from flask import Blueprint, request, redirect, render_template, url_for
 from flask.views import MethodView
 
-from flask.ext.mongoengine.wtf import model_form
+from flask_mongoengine.wtf import model_form
 
 from tumblelog.auth import requires_auth
 from tumblelog.models import Post, BlogPost, Video, Image, Quote, Comment

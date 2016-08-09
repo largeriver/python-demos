@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>我的微博客</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>.content {padding-top: 80px;}</style>
-  </head>
+    <!-- link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>.content {
+        padding-top: 80px;
+    }</style>
+</head>
 
-  <body>
+<body>
 
-    {%- block topbar -%}
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+{%- block topbar -%}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
         <div class="navbar-header">
-          <h2>
-              <a href="/" class="brand">我的微博客</a> <small>Starring Flask, MongoDB and MongoEngine</small>
-          </h2>
+            <h2>
+                <a href="/" class="brand">我的微博客</a>
+                <small>Starring Flask, MongoDB and MongoEngine</small>
+            </h2>
         </div>
         <div class="navbar-collapse">
         </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    {%- endblock -%}
+    </div>
+</nav>
+{%- endblock -%}
 
-    <div class="container">
-      <div class="content">
+<div class="container">
+    <div class="content">
         {% block page_header %}{% endblock %}
         {% block content %}{% endblock %}
-      </div>
     </div>
-    {% block js_footer %}{% endblock %}
-  </body>
+</div>
+{% block js_footer %}{% endblock %}
+</body>
 </html>

@@ -3,7 +3,8 @@ from flask import Blueprint, request, redirect, render_template, url_for
 from flask.views import MethodView
 from .models import Post, Comment
 
-from flask.ext.mongoengine.wtf import model_form
+
+from flask_mongoengine.wtf import model_form
 
 posts = Blueprint('posts', __name__, template_folder='templates')
 
@@ -56,8 +57,8 @@ class DetailView(MethodView):
         return render_template('posts/detail.html', **context)
 
 # Register the urls
-posts.add_url_rule('/', view_func=ListView.as_view('list'))
-posts.add_url_rule('/<slug>/', view_func=DetailView.as_view('detail'))
+posts.add_url_rule('/post', view_func=ListView.as_view('list'))
+posts.add_url_rule('/post/<slug>/', view_func=DetailView.as_view('detail'))
 
 # the follow format is ok too
 # the endpoint for url_for is posts.detail <= Blueprint(posts).name + View(detail).name
