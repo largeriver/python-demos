@@ -38,7 +38,7 @@ def register_blueprints(app):
     from .views import posts
     from admin.admin import admin
     app.register_blueprint(posts,url_prefix="/posts")
-    app.register_blueprint(admin,url_prefix='/admin')
+    app.register_blueprint(admin,url_prefix="/admin")
 
 
 register_blueprints(app)
