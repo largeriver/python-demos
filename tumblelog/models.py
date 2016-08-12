@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+'''
+ 本文件使用了ORM来定义mongodb documents
+ 详细的配置和解释清参考
+ https://mongoengine-odm.readthedocs.io/tutorial.htm
+'''
 import datetime
 
 from flask import url_for

@@ -1,11 +1,11 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 from flask import Blueprint, request, redirect, render_template, url_for
 from flask.views import MethodView
 
 from flask_mongoengine.wtf import model_form
 
-from tumblelog.auth import requires_auth
+from .auth import requires_auth
 from tumblelog.models import Post, BlogPost, Video, Image, Quote, Comment
 
 admin = Blueprint('admin', __name__, template_folder='templates')
@@ -81,6 +81,6 @@ class Detail(MethodView):
 
 
 # Register the urls
-admin.add_url_rule('/admin/', view_func=List.as_view('index'))
-admin.add_url_rule('/admin/create/', defaults={'slug': None}, view_func=Detail.as_view('create'))
-admin.add_url_rule('/admin/<slug>/', view_func=Detail.as_view('edit'))
+admin.add_url_rule('/', view_func=List.as_view('index'))
+admin.add_url_rule('/create/', defaults={'slug': None}, view_func=Detail.as_view('create'))
+admin.add_url_rule('/<slug>/', view_func=Detail.as_view('edit'))
